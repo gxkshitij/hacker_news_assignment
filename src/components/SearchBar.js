@@ -10,7 +10,6 @@ class SearchBar extends Component {
     }
     formSubmit(e){
         e.preventDefault()
-        console.log('Form submitted');
         if(this.state.query === ""){
             alert('Sorry, no input');
             return;
@@ -19,7 +18,6 @@ class SearchBar extends Component {
     }
 
     onInputChange(value){
-        console.log('Search Value is ', value);
         this.setState({ query : value });
     }
 

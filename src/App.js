@@ -16,12 +16,9 @@ class App extends Component {
   }
 
   searchNews(value){
-    console.log(value);
-    console.log(this);
     const url = "http://hn.algolia.com/api/v1/search?query=";
     axios.get(`${url}${value}`).then(
       response => {
-        console.log(response);
         this.setState({ news: response.data.hits })
       }
     );
