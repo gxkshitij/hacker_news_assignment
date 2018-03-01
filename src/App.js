@@ -16,12 +16,16 @@ class App extends Component {
   }
 
   searchNews(value){
-    const url = "http://hn.algolia.com/api/v1/search?query=";
-    axios.get(`${url}${value}`).then(
+    const url = "http://hn.algolia.com/api/v1/search";
+    axios.get(`${url}`,{
+      params: {
+        query: value
+      }
+    }).then(
       response => {
         this.setState({ news: response.data.hits })
       }
-    );
+    ).catch( error => console.log(error));
   }
   
   render() {
